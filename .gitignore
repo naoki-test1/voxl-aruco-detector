@@ -1,0 +1,20 @@
+# Build outputs
+build/
+bin/
+obj/
+CMakeFiles/
+CMakeCache.txt
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,29 @@
+# 入力カメラ（MPAパイプ名）
+camera_pipe: "/run/mpa/tracking_front"
+# 出力パイプ（衝突回避のため専用名）
+out_pipe: "/run/mpa/tag-detections-aruco"
+
+# OpenCV ArUco辞書
+aruco_dict: "DICT_4X4_50"   # 例: DICT_6X6_100, DICT_5X5_1000 など
+
+# 画像フォーマットの想定（camera-server設定に合わせる）
+# gray8 or nv12（RGB等にしたい場合は必要に応じて自分で変換）
+image_format: "gray8"
+
+# キャリブファイル（OpenCV形式）
+intrinsics: "/data/modalai/opencv_tracking_front_intrinsics.yml"
+
+# 出力の補助情報
+camera_name: "tracking_front"
+
+# id→タグ実寸[m]（見つからなければ default_size_m）
+default_size_m: 0.16
+id_size_map:
+  "0": 0.16
+  "1": 0.16
+  "2": 0.10
+
+# 検出パラメータ
+min_marker_perimeter_rate: 0.02
+corner_refinement: true
+downscale: 1         # 2にすると1/2縮小で高速化
